@@ -43,7 +43,7 @@ class Odnoklassniki extends \samson\social\network\Network
             $token = $this->post($this->tokenURL, array(
                 'code' => $code,
                 'redirect_uri' => $this->returnURL(),
-                'grant_type' => 'uthorization_code',
+                'grant_type' => 'authorization_code',
                 'client_id' => $this->appCode,
                 'client_secret' => $this->appSecret,
             ));
@@ -59,9 +59,7 @@ class Odnoklassniki extends \samson\social\network\Network
                 ));
                 $this->setUser($userInfo);
             }
-
         }
-
         parent::__token();
     }
 
